@@ -31,8 +31,6 @@ spark-submit --packages databricks:spark-deep-learning:1.5.0-spark2.4-s_2.11 --e
 ```
 - This will create `lrModel` directory that contains the trained model and a `dictionary.pkl` file that contains the labels used to train the model
 
-- The `lrModel` when trained gave a 77.5% accuracy for 40 labels
-
 ### Predicting the results
 - Place the images to be predicted in `predict_images` directory
 - Run this command in the terminal
