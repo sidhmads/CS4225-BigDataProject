@@ -15,6 +15,8 @@ def rescale_image(img_dir, rescaled_dir):
   for root, directories, files in os.walk(img_dir):
     os.mkdir(rescaled_dir)
     for img in files:
+      if '.DS_Store' in img:
+        continue
       im = Image.open("{}/{}".format(root, img)).convert('L')
       x, y = im.size
       fill_color = (255, 255, 255, 0)
