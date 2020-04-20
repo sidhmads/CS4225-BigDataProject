@@ -1,3 +1,17 @@
+# SparkFab! The Fashion Search
+
+## Run the application
+
+- Make the shell script executable by running the following command in terminal
+``` 
+  chmod +x ./run_application.sh
+  ```
+- Once it is executable, run the following comand in terminal
+```
+./run_application.sh
+```
+- Visit the URL http://127.0.0.1:8000/fashion to view the web application
+
 ## Runing model with fashion-dataset from kaggle
 
 ### Downloading dataset from kaggle
@@ -32,7 +46,7 @@ spark-submit --packages databricks:spark-deep-learning:1.5.0-spark2.4-s_2.11 --e
 - This will create `lrModel` directory that contains the trained model and a `dictionary.pkl` file that contains the labels used to train the model
 
 ### Predicting the results
-- Place the images to be predicted in `predict_images` directory
+- Place the images to be predicted in `media` directory
 - Run this command in the terminal
 ```
 spark-submit --packages databricks:spark-deep-learning:1.5.0-spark2.4-s_2.11 ./predict.py
