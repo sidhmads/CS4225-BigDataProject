@@ -27,7 +27,7 @@ for root, directories, files in os.walk(img_dir):
         size_y = x
     new_im = Image.new('RGB', (size_x, size_y), fill_color)
     new_im.paste(im, (int((size_x - x) / 2), int((size_y - y) / 2)))
-    width = 100
+    width = 80
     img_rescaled = resizeimage.resize_cover(new_im, [width, width])
 
     img_rescaled.save("{}/{}/{}".format(output_dir, label, f))
