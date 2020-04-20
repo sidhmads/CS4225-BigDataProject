@@ -28,7 +28,7 @@ def rescale_image(img_dir, rescaled_dir):
           size_y = x
       new_im = Image.new('RGB', (size_x, size_y), fill_color)
       new_im.paste(im, (int((size_x - x) / 2), int((size_y - y) / 2)))
-      width = 100
+      width = 80
       img_rescaled = resizeimage.resize_cover(new_im, [width, width])
       img_rescaled.save("{}/rescaled/{}".format(root, img))
 
@@ -39,15 +39,20 @@ if __name__ == "__main__":
   lr = LogisticRegressionModel.load('./lrModel')
   p_model = PipelineModel(stages=[featurizer, lr])
 
-  directory = "./predict_images"
+  directory = "./media"
   rescaled_dir = "{}/rescaled".format(directory)
 
   rescale_image(directory, rescaled_dir)
 
   temp_df = ImageSchema.readImages(rescaled_dir)
   df = p_model.transform(temp_df)
+  f = open("predict_output.txt", "r+")
+  f.seek(0)
+  f.truncate()
   for i in df.select(['image','prediction']).collect():
     print("{} = {}".format(i[0][0].split('/')[-1], img_dic[int(i[1])]))
+    f.write("{} = {}\n".format(i[0][0].split('/')[-1], img_dic[int(i[1])]))
+  f.close()
 
   shutil.rmtree(rescaled_dir)
 

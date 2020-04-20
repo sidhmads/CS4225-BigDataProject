@@ -1,0 +1,97 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+<script>
+   predictSpinner = () => {
+     document.getElementById("result-row").innerHTML = '<div class="spinner-grow text-primary" style="width: 5rem; height:5rem" role="status"><span class="sr-only">Loading...</span></div><br /><h5>Model Predicting ...</h5>'
+   }
+</script>
+{% if success %}
+<script>
+  setTimeout(()=> {
+    $(".alert").alert('close')
+  }, 5000)
+</script>
+<div class="row mt-3 mb-3">
+  <div class="col-12 m-auto alert alert-success" role="alert">
+    {{message}}
+  </div>
+</div>
+{% endif %}
+<div class="row">
+<div class="col-md-6 m-auto">
+    <div class="card mb-3 mt-3">
+        <div class="card-body">
+          <h5 class="card-title">Live Fashion</h5>
+          <p class="card-text">
+            Click below button to allow webcam to capture image
+          </p>
+          <p class="card-text">
+            <a class="btn btn-outline-dark" href={% url 'fashion:capture' %}>Capture</a>
+          </p>
+        </div>
+      </div>
+</div>
+<div class="col-md-6 m-auto">
+    <div class="card mb-3 mt-3">
+        <div class="card-body">
+          <h5 class="card-title">Upload Fashion</h5>
+          <p class="card-text">
+            Click below button to upload image
+          </p>
+          <form action={% url 'fashion:upload' %} method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+              <div class="custom-file col-8 ml-2 mr-2">
+                <input type="file" name="myfile" class="custom-file-input" id="validatedCustomFile" />
+                <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+            </div>
+            <button type="submit" class="btn btn-outline-dark col-2 mr-2">Submit</button>
+            </div>
+        </form>
+        </div>
+      </div>
+</div>
+</div>
+{% if success %}
+<div class="row mt-3 mb-3">
+<!-- Button trigger modal -->
+<div class="col-12 mt-2 mb-2">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#imageModal">
+    View Image
+  </button>
+  <a onclick="predictSpinner()" class="btn btn-primary" href={% url 'fashion:runmodel' %}>
+    Predict Image
+  </a>
+</div>
+<div class="container m-auto" id="result-row">
+
+</div>
+{% if modal %}
+<div class="col-12 mt-4 mb-4">
+<h3>Prediction Results</h3>
+{% for image in predictResult %}
+<ul>{{image}} </ul>
+{% endfor %}
+</div>
+{% endif %}
+<!-- Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel">Fashion Gallery</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% for image in imageList %}
+        <img src={{image}} class="img-fluid" />
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endif %}
+{% endblock %}

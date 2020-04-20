@@ -1,0 +1,2 @@
+fashion-capture.jpg = Apparel_Innerwear_Briefs
+fashion-upload.jpg = Accessories_Bags_Clutches

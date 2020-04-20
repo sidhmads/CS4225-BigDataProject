@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ./fashion/
+
 echo -e "Partitioning the images"
 
 python partition.py
