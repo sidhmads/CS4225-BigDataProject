@@ -9,4 +9,5 @@ urlpatterns = [
     path('capture', views.capture, name='capture'),
     path('upload', views.upload, name='upload'),
     path('runmodel', views.runmodel, name='runmodel'),
+    path('search', views.search, name='search'),
 ]

@@ -69,6 +69,11 @@ def runmodel(request):
     
     return render(request, 'fashion/index.html', context)
 
+def search(request):
+    search = request.POST.get('search')
+    context = {'search': search}
+    return render(request, 'fashion/index.html', context)
+
     
 
     
