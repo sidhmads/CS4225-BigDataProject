@@ -1,2 +1,2 @@
-fashion-capture.jpg = Apparel_Innerwear_Briefs
-fashion-upload.jpg = Accessories_Bags_Clutches
+fashion-capture.jpg = Accessories_Jewellery_Earrings
+fashion-upload.jpg = Apparel_Topwear_Tshirts
