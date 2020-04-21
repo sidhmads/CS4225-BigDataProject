@@ -1,2 +1,0 @@
-fashion-capture.jpg = Accessories_Jewellery_Earrings
-fashion-upload.jpg = Apparel_Topwear_Tshirts

@@ -10,4 +10,6 @@ urlpatterns = [
     path('upload', views.upload, name='upload'),
     path('runmodel', views.runmodel, name='runmodel'),
     path('search', views.search, name='search'),
+    path('showsimilar', views.showsimilar, name='showsimilar'),
+    path('lazyload', views.lazyload, name='lazyload'),
 ]

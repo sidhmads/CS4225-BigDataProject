@@ -71,9 +71,33 @@ def runmodel(request):
 
 def search(request):
     search = request.POST.get('search')
-    params = {'q': search}
+    params = {'q': search, 'size': '10', 'scroll': '1m'}
+    context = searchElasticCluster("_search", params)
+    return render(request, 'fashion/search.html', context)
+
+def showsimilar(request):
+    masterCategoryList = []
+    subCategoryList = []
+    articleTypeList = []
+    f = open("predict_output.txt", "r")
+    for line in f.read().split("\n"):
+        if line != "":
+            splitString = line.split('=')[1]
+            masterCategory, subCategory, articleType = splitString.split('_')
+            masterCategoryList.append(masterCategory.strip())
+            subCategoryList.append(subCategory.strip())
+            articleTypeList.append(articleType.strip())
+    params = {'q': masterCategoryList, 'size': '10', 'scroll': '1m'}
+    context = searchElasticCluster("_search", params)
+    return render(request, 'fashion/search.html', context)
+
+    
+def searchElasticCluster(type, params):
     try:
-        response = requests.get("http://localhost:9200/_search", params)
+        lazyLoad = False
+        if type == "_search/scroll":
+            lazyLoad = True
+        response = requests.get("http://localhost:9200/"+type, params)
         if response.status_code == 200:
             data = response.json()
             resultArray = []
@@ -81,17 +105,22 @@ def search(request):
                 resultArray.append(hit['_source'])
             message = "Search Success"
             showAlert = True
-            context = {'search': resultArray, 'message':message, 'success': showAlert}
+            scrollId = data['_scroll_id']
+            context = {'search': resultArray, 'message':message, 'success': showAlert, 'scrollId': scrollId, 'lazyLoad': lazyLoad}
+            return context
         else:
             message = "Search Failed"
             showAlert = True
             context = {'message': message, 'success': showAlert}
+            return context
     except:
         message = "No Elastic Cluster Found"
         showAlert = True
         context = {'message': message, 'success': showAlert}
+        return context
+
+def lazyload(request):
+    scrollid = request.POST.get('scrollid')
+    params = {'scroll_id': scrollid, 'scroll': '1m'}
+    context = searchElasticCluster("_search/scroll", params)
     return render(request, 'fashion/search.html', context)
-
-    
-
-    

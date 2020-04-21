@@ -1,8 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 {% load static %}
 <script>
-   predictSpinner = () => {
-     document.getElementById("result-row").innerHTML = '<div class="spinner-grow text-primary" style="width: 5rem; height:5rem" role="status"><span class="sr-only">Loading...</span></div><br /><h5>Model Predicting ...</h5>'
+   loadSpinner = (param) => {
+     document.getElementById("result-row").innerHTML = `<div class="spinner-grow text-primary" style="width: 5rem; height:5rem" role="status"><span class="sr-only">Loading...</span></div><br /><h5>${param}</h5>`
    }
 </script>
 {% if success %}
@@ -57,22 +57,26 @@
 <!-- Button trigger modal -->
 <div class="col-12 mt-2 mb-2">
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#imageModal">
-    View Image
+    View Images
   </button>
-  <a onclick="predictSpinner()" class="btn btn-primary" href={% url 'fashion:runmodel' %}>
-    Predict Image
+  <a onclick="loadSpinner('Model Predicting ...')" class="btn btn-primary" href={% url 'fashion:runmodel' %}>
+    Predict Images
   </a>
 </div>
 <div class="container m-auto" id="result-row"></div>
 {% if modal %}
 <div class="col-12 mt-4 mb-4">
 <h3>Prediction Results</h3>
+<div class="container">
 {% for image in predictResult %}
 <ul>
-  {{image}} 
-  <a href={% url 'fashion:search' %}>Search Now</a>
+  {{image}}
 </ul>
 {% endfor %}
+</div>
+<a onclick="loadSpinner('Loading Items ...')" class="btn btn-primary" href={% url 'fashion:showsimilar' %}>
+  Show Similar Items
+</a>
 </div>
 {% endif %}
 <!-- Modal -->
