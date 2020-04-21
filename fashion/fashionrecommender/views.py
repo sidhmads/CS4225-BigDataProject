@@ -5,7 +5,7 @@ from django.core.files.storage import FileSystemStorage
 import cv2
 import os
 import subprocess
-
+import requests
 
 def index(request):
     return render(request, 'fashion/index.html')
@@ -71,8 +71,26 @@ def runmodel(request):
 
 def search(request):
     search = request.POST.get('search')
-    context = {'search': search}
-    return render(request, 'fashion/index.html', context)
+    params = {'q': search}
+    try:
+        response = requests.get("http://localhost:9200/_search", params)
+        if response.status_code == 200:
+            data = response.json()
+            resultArray = []
+            for hit in data['hits']['hits']:
+                resultArray.append(hit['_source'])
+            message = "Search Success"
+            showAlert = True
+            context = {'search': resultArray, 'message':message, 'success': showAlert}
+        else:
+            message = "Search Failed"
+            showAlert = True
+            context = {'message': message, 'success': showAlert}
+    except:
+        message = "No Elastic Cluster Found"
+        showAlert = True
+        context = {'message': message, 'success': showAlert}
+    return render(request, 'fashion/search.html', context)
 
     
 

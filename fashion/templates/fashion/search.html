@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block content %} {% if success %}
+<script>
+  setTimeout(() => {
+    $('.alert').alert('close');
+  }, 5000);
+</script>
+<div class="row mt-3 mb-3">
+  <div class="col-12 m-auto alert alert-success" role="alert">
+    {{message}}
+  </div>
+</div>
+{% endif %}
+<div class="col-12 mt-4 mb-4">
+  <a href={%url 'fashion:index' %} class="btn btn-outline-dark">Back</a>
+</div>
+<div class="row mt-4 mb-4">
+{% for data in search %}
+    <div class="col-sm-6 mb-2" id={{data.id}} >
+      <div class="card" style="flex-direction: row;">
+        <div class="col-6">
+            <img class="card-img-top" src={{data.link}} alt="SparkFab">
+        </div>
+        <div class="col-6 card-body">
+          <h5 class="card-title text-center"> {{data.productDisplayName}} </h5>
+          <div class="container text-center">
+            <p class="card-text mb-2">{{data.masterCategory}} - {{data.subCategory}} </p>
+            <p class="card-text mb-2">
+                <span class="badge badge-pill badge-dark">{{data.gender}}</span>
+                <span class="badge badge-pill badge-dark">{{data.articleType}}</span>
+                <span class="badge badge-pill badge-dark">{{data.baseColour}}</span>
+                <span class="badge badge-pill badge-dark">{{data.usage}}</span>
+            </p>
+            <a href="#" class="btn btn-primary mt-4 mb-2">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
