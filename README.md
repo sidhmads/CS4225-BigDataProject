@@ -16,7 +16,7 @@
 
 - Visit the URL http://127.0.0.1:8000/fashion to view the web application
 
-## Run ElasticSearch Service
+## Run Elasticsearch Service
 
 - Download ELK stack from the follwing website, https://www.elastic.co/downloads/ and setup Environment Variables
 
@@ -30,6 +30,14 @@
 
 ```
 ./setup_elastic_data.sh
+```
+- Start the elasticsearch service
+
+- Stream Data into elastic cluster using logstash
+
+```
+cd ./fashion
+logstash -f logstash.conf
 ```
 
 - Visit the URL http://127.0.0.1:8000/fashion to view the web application and use elasticsearch functionality
