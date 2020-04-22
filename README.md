@@ -32,7 +32,7 @@
 
 - The dataset can be found here: https://www.kaggle.com/paramaggarwal/fashion-product-images-dataset
 
-- Download the dataset and unzip it to this folder
+- Download the dataset and unzip it inside the fashion folder
 
 ### Getting the data ready for the model
 - Make the shell script executable by running the following command in terminal
