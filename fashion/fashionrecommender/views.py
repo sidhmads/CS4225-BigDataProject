@@ -87,7 +87,7 @@ def showsimilar(request):
             masterCategoryList.append(masterCategory.strip())
             subCategoryList.append(subCategory.strip())
             articleTypeList.append(articleType.strip())
-    params = {'q': masterCategoryList, 'size': '10', 'scroll': '1m'}
+    params = {'q': articleTypeList, 'size': '10', 'scroll': '1m'}
     context = searchElasticCluster("_search", params)
     return render(request, 'fashion/search.html', context)
 
