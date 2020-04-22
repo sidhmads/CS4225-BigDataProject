@@ -12,6 +12,20 @@
 ```
 - Visit the URL http://127.0.0.1:8000/fashion to view the web application
 
+## Run ElasticSearch Service
+
+- Download ELK stack from the follwing website, https://www.elastic.co/downloads/ and setup Environment Variables
+
+- Make the shell script executable by running the following command in terminal
+``` 
+  chmod +x ./setup_elastic.sh
+  ```
+- Once it is executable, run the following comand in terminal
+```
+./setup_elastic.sh
+```
+- Visit the URL http://127.0.0.1:8000/fashion to view the web application and use elasticsearch functionality
+
 ## Runing model with fashion-dataset from kaggle
 
 ### Downloading dataset from kaggle
