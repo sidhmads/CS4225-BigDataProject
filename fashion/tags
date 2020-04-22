@@ -1,0 +1,179 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ALLOWED_HOSTS	fashion/settings.py	/^ALLOWED_HOSTS = []$/;"	v
+AUTH_PASSWORD_VALIDATORS	fashion/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	v
+AppConfig	fashionrecommender/apps.py	/^from django.apps import AppConfig$/;"	i
+BASE_DIR	fashion/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	v
+DATABASES	fashion/settings.py	/^DATABASES = {$/;"	v
+DEBUG	fashion/settings.py	/^DEBUG = True$/;"	v
+DeepImageFeaturizer	classify_spark.py	/^from sparkdl import DeepImageFeaturizer$/;"	i
+DeepImageFeaturizer	predict.py	/^from sparkdl import DeepImageFeaturizer$/;"	i
+FashionrecommenderConfig	fashionrecommender/apps.py	/^class FashionrecommenderConfig(AppConfig):$/;"	c
+FileSystemStorage	fashionrecommender/views.py	/^from django.core.files.storage import FileSystemStorage$/;"	i
+HttpResponseRedirect	fashion/urls.py	/^from django.http import HttpResponseRedirect$/;"	i
+HttpResponseRedirect	fashionrecommender/views.py	/^from django.http import HttpResponseRedirect$/;"	i
+INSTALLED_APPS	fashion/settings.py	/^INSTALLED_APPS = [$/;"	v
+Image	greyscale.py	/^from PIL import Image$/;"	i
+Image	predict.py	/^from PIL import Image$/;"	i
+ImageSchema	classify_spark.py	/^from pyspark.ml.image import ImageSchema$/;"	i
+ImageSchema	predict.py	/^from pyspark.ml.image import ImageSchema$/;"	i
+LANGUAGE_CODE	fashion/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	v
+LogisticRegression	classify_spark.py	/^from pyspark.ml.classification import LogisticRegression, LogisticRegressionModel$/;"	i
+LogisticRegressionModel	classify_spark.py	/^from pyspark.ml.classification import LogisticRegression, LogisticRegressionModel$/;"	i
+LogisticRegressionModel	predict.py	/^from pyspark.ml.classification import LogisticRegressionModel$/;"	i
+MEDIA_ROOT	fashion/settings.py	/^MEDIA_ROOT = os.path.join(BASE_DIR, 'media')$/;"	v
+MEDIA_URL	fashion/settings.py	/^MEDIA_URL = '\/media\/'$/;"	v
+MIDDLEWARE	fashion/settings.py	/^MIDDLEWARE = [$/;"	v
+MulticlassClassificationEvaluator	classify_spark.py	/^from pyspark.ml.evaluation import MulticlassClassificationEvaluator$/;"	i
+Pipeline	classify_spark.py	/^from pyspark.ml import Pipeline, PipelineModel$/;"	i
+PipelineModel	classify_spark.py	/^from pyspark.ml import Pipeline, PipelineModel$/;"	i
+PipelineModel	predict.py	/^from pyspark.ml import PipelineModel$/;"	i
+ROOT_URLCONF	fashion/settings.py	/^ROOT_URLCONF = 'fashion.urls'$/;"	v
+SQLContext	classify_spark.py	/^from pyspark.sql import SQLContext$/;"	i
+SQLContext	predict.py	/^from pyspark.sql import SQLContext$/;"	i
+STATIC_ROOT	fashion/settings.py	/^STATIC_ROOT = os.path.join(BASE_DIR, 'static')$/;"	v
+STATIC_URL	fashion/settings.py	/^STATIC_URL = '\/static\/'$/;"	v
+SparkConf	classify_spark.py	/^from pyspark import SparkContext,SparkConf$/;"	i
+SparkConf	predict.py	/^from pyspark import SparkContext,SparkConf$/;"	i
+SparkContext	classify_spark.py	/^from pyspark import SparkContext,SparkConf$/;"	i
+SparkContext	predict.py	/^from pyspark import SparkContext,SparkConf$/;"	i
+TEMPLATES	fashion/settings.py	/^TEMPLATES = [$/;"	v
+TIME_ZONE	fashion/settings.py	/^TIME_ZONE = 'UTC'$/;"	v
+TestCase	fashionrecommender/tests.py	/^from django.test import TestCase$/;"	i
+USE_I18N	fashion/settings.py	/^USE_I18N = True$/;"	v
+USE_L10N	fashion/settings.py	/^USE_L10N = True$/;"	v
+USE_TZ	fashion/settings.py	/^USE_TZ = True$/;"	v
+WSGI_APPLICATION	fashion/settings.py	/^WSGI_APPLICATION = 'fashion.wsgi.application'$/;"	v
+admin	fashion/urls.py	/^from django.contrib import admin$/;"	i
+admin	fashionrecommender/admin.py	/^from django.contrib import admin$/;"	i
+app_name	fashionrecommender/urls.py	/^app_name = 'fashion'$/;"	v
+application	fashion/asgi.py	/^application = get_asgi_application()$/;"	v
+application	fashion/wsgi.py	/^application = get_wsgi_application()$/;"	v
+article	partition.py	/^      article = row[article_type]$/;"	v
+article_type	partition.py	/^      article_type = header.index('articleType')$/;"	v
+capture	fashionrecommender/views.py	/^def capture(request):$/;"	f
+csv	normalize.py	/^import csv$/;"	i
+csv	partition.py	/^import csv$/;"	i
+csv_reader	partition.py	/^  csv_reader = csv.reader(csv_file, delimiter=',')$/;"	v
+cv2	fashionrecommender/views.py	/^import cv2$/;"	i
+data	normalize.py	/^data = {}$/;"	v
+data	partition.py	/^data = {}$/;"	v
+dataLen	normalize.py	/^dataLen = {}$/;"	v
+df	classify_spark.py	/^  df = p_model.transform(test_df)$/;"	v
+df	predict.py	/^  df = p_model.transform(temp_df)$/;"	v
+directory	classify_spark.py	/^  directory = ".\/fashion_spark"$/;"	v
+directory	predict.py	/^  directory = ".\/media"$/;"	v
+document_root	fashion/urls.py	/^                          document_root=settings.MEDIA_ROOT)$/;"	v
+document_root	fashion/urls.py	/^                          document_root=settings.STATIC_ROOT)$/;"	v
+evaluator	classify_spark.py	/^  evaluator = MulticlassClassificationEvaluator(metricName="accuracy")$/;"	v
+execute_from_command_line	manage.py	/^        from django.core.management import execute_from_command_line$/;"	i
+f	predict.py	/^  f = open("predict_output.txt", "r+")$/;"	v
+featurizer	classify_spark.py	/^  featurizer = DeepImageFeaturizer(inputCol="image", outputCol="features", modelName="InceptionV3")$/;"	v
+featurizer	predict.py	/^  featurizer = DeepImageFeaturizer(inputCol="image", outputCol="features", modelName="InceptionV3")$/;"	v
+fill_color	greyscale.py	/^    fill_color = (255, 255, 255, 0)$/;"	v
+folder	normalize.py	/^  folder = i.split('\/')[-1]$/;"	v
+getDataFrame	classify_spark.py	/^def getDataFrame(img_dir):$/;"	f
+getTrainTestPartition	partition.py	/^def getTrainTestPartition(dataArr):$/;"	f
+get_asgi_application	fashion/asgi.py	/^from django.core.asgi import get_asgi_application$/;"	i
+get_wsgi_application	fashion/wsgi.py	/^from django.core.wsgi import get_wsgi_application$/;"	i
+gzip	fashionrecommender/views.py	/^from django.views.decorators import gzip$/;"	i
+header	partition.py	/^header = []$/;"	v
+iD	partition.py	/^      iD = row[id_col]$/;"	v
+id_col	partition.py	/^      id_col = header.index('id')$/;"	v
+im	greyscale.py	/^    im = Image.open(img_dir).convert('L')$/;"	v
+image_set	normalize.py	/^image_set =  ".\/dataset_images"$/;"	v
+images_df	setupelastic.py	/^images_df = images_df.rename(columns=({'filename':'id'}))$/;"	v
+images_df	setupelastic.py	/^images_df = pd.read_csv(".\/fashion-dataset\/images.csv", error_bad_lines=False)$/;"	v
+img_dic	predict.py	/^  img_dic = joblib.load("dictionary.pkl")[0]$/;"	v
+img_dir	greyscale.py	/^    img_dir = '{}\/{}'.format(root, f)$/;"	v
+img_dir	greyscale.py	/^img_dir = ".\/dataset_images"$/;"	v
+img_rescaled	greyscale.py	/^    img_rescaled = resizeimage.resize_cover(new_im, [width, width])$/;"	v
+include	fashion/urls.py	/^from django.urls import include, path$/;"	i
+index	fashionrecommender/views.py	/^def index(request):$/;"	f
+isFirst	partition.py	/^      isFirst = False$/;"	v
+isFirst	partition.py	/^  isFirst = True$/;"	v
+joblib	classify_spark.py	/^import joblib$/;"	i
+joblib	predict.py	/^import joblib$/;"	i
+jsonFile	normalize.py	/^    jsonFile = file.split(".jpg")[0]$/;"	v
+label	greyscale.py	/^  label = root.split('\/')[-1]$/;"	v
+lazyload	fashionrecommender/views.py	/^def lazyload(request):$/;"	f
+lit	classify_spark.py	/^from pyspark.sql.functions import lit$/;"	i
+lit	predict.py	/^from pyspark.sql.functions import lit$/;"	i
+lr	classify_spark.py	/^  lr = LogisticRegression(maxIter=20, regParam=0.05, elasticNetParam=0.3, labelCol="label")$/;"	v
+lr	predict.py	/^  lr = LogisticRegressionModel.load('.\/lrModel')$/;"	v
+main	manage.py	/^def main():$/;"	f
+master	partition.py	/^      master = row[master_cat]$/;"	v
+master_cat	partition.py	/^      master_cat = header.index('masterCategory')$/;"	v
+merged_df	setupelastic.py	/^merged_df = images_df.merge(styles_df, on='id')$/;"	v
+models	fashionrecommender/models.py	/^from django.db import models$/;"	i
+name	fashionrecommender/apps.py	/^    name = 'fashionrecommender'$/;"	v	class:FashionrecommenderConfig
+new_article	partition.py	/^      new_article = renameFolder(master + "_" + sub + "_" + article)$/;"	v
+new_im	greyscale.py	/^    new_im = Image.new('RGB', (size_x, size_y), fill_color)$/;"	v
+os	classify_spark.py	/^import os$/;"	i
+os	fashion/asgi.py	/^import os$/;"	i
+os	fashion/settings.py	/^import os$/;"	i
+os	fashion/wsgi.py	/^import os$/;"	i
+os	fashionrecommender/views.py	/^import os$/;"	i
+os	greyscale.py	/^import os$/;"	i
+os	manage.py	/^import os$/;"	i
+os	normalize.py	/^import os$/;"	i
+os	partition.py	/^import os$/;"	i
+os	predict.py	/^import os$/;"	i
+output_dir	greyscale.py	/^output_dir = '.\/fashion_spark'$/;"	v
+p	classify_spark.py	/^  p = Pipeline(stages=[featurizer, lr])$/;"	v
+p_model	classify_spark.py	/^  p_model = p.fit(train_df)$/;"	v
+p_model	predict.py	/^  p_model = PipelineModel(stages=[featurizer, lr])$/;"	v
+path	fashion/urls.py	/^from django.urls import include, path$/;"	i
+path	fashionrecommender/urls.py	/^from django.urls import path$/;"	i
+path	normalize.py	/^path = os.getcwd()$/;"	v
+path	partition.py	/^path = os.getcwd()$/;"	v
+pd	setupelastic.py	/^import pandas as pd$/;"	i
+predictionAndLabels	classify_spark.py	/^  predictionAndLabels = df.select("prediction", "label")$/;"	v
+random	normalize.py	/^import random$/;"	i
+remove_dir	normalize.py	/^remove_dir = []$/;"	v
+renameFolder	partition.py	/^def renameFolder(name):$/;"	f
+render	fashionrecommender/views.py	/^from django.shortcuts import render$/;"	i
+requests	fashionrecommender/views.py	/^import requests$/;"	i
+rescale_image	predict.py	/^def rescale_image(img_dir, rescaled_dir):$/;"	f
+rescaled_dir	predict.py	/^  rescaled_dir = "{}\/rescaled".format(directory)$/;"	v
+resizeimage	greyscale.py	/^from resizeimage import resizeimage$/;"	i
+resizeimage	predict.py	/^from resizeimage import resizeimage$/;"	i
+runmodel	fashionrecommender/views.py	/^def runmodel(request):$/;"	f
+sample	normalize.py	/^  sample = random.sample(data[i], dataLen[i] - smallest)$/;"	v
+sc	classify_spark.py	/^  sc = SparkContext()$/;"	v
+sc	predict.py	/^  sc = SparkContext()$/;"	v
+search	fashionrecommender/views.py	/^def search(request):$/;"	f
+searchElasticCluster	fashionrecommender/views.py	/^def searchElasticCluster(type, params):$/;"	f
+settings	fashion/urls.py	/^from django.conf import settings$/;"	i
+showsimilar	fashionrecommender/views.py	/^def showsimilar(request):$/;"	f
+shutil	greyscale.py	/^import shutil$/;"	i
+shutil	normalize.py	/^import shutil$/;"	i
+shutil	partition.py	/^import shutil$/;"	i
+shutil	predict.py	/^import shutil$/;"	i
+size_x	greyscale.py	/^        size_x = x$/;"	v
+size_x	greyscale.py	/^      size_x = y$/;"	v
+size_y	greyscale.py	/^        size_y = x$/;"	v
+size_y	greyscale.py	/^      size_y = y$/;"	v
+smallest	normalize.py	/^smallest = min(list(dataLen.values()))$/;"	v
+sqlContext	classify_spark.py	/^  sqlContext = SQLContext(sc)$/;"	v
+static	fashion/urls.py	/^from django.conf.urls.static import static$/;"	i
+style_set	normalize.py	/^style_set = ".\/dataset_styles"$/;"	v
+styles_df	setupelastic.py	/^styles_df = pd.read_csv(".\/fashion-dataset\/styles.csv", error_bad_lines=False)$/;"	v
+sub	partition.py	/^      sub = row[sub_cat]$/;"	v
+sub_cat	partition.py	/^      sub_cat = header.index('subCategory')$/;"	v
+subprocess	fashionrecommender/views.py	/^import subprocess$/;"	i
+sys	manage.py	/^import sys$/;"	i
+temp_df	predict.py	/^  temp_df = ImageSchema.readImages(rescaled_dir)$/;"	v
+test_df	classify_spark.py	/^  test_df = test_df.repartition(10)$/;"	v
+train_df	classify_spark.py	/^  train_df = train_df.repartition(10)$/;"	v
+upload	fashionrecommender/views.py	/^def upload(request):$/;"	f
+urlpatterns	fashion/urls.py	/^urlpatterns = [$/;"	v
+urlpatterns	fashionrecommender/urls.py	/^urlpatterns = [$/;"	v
+use_webcam	fashionrecommender/views.py	/^def use_webcam():$/;"	f
+views	fashion/urls.py	/^from fashionrecommender import views$/;"	i
+views	fashionrecommender/urls.py	/^from . import views$/;"	i
+width	greyscale.py	/^    width = 80$/;"	v
