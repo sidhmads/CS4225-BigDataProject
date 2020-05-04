@@ -2,7 +2,47 @@
 
 #### NOTE: Windows Compatible README
 
-## Run the application
+## A. Environment Setup
+
+- Install pipenv in the system
+
+```
+pip install pipenv
+```
+
+- Clone the git repository
+
+```
+git clone https://github.com/sidhmads/CS4225-CS5425-BigDataProject.git
+```
+
+- Move to project directory
+
+```
+cd CS4225-CS5225-BigDataProject
+```
+
+- Start the pipenv shell virtual environment
+
+```
+pipenv shell
+```
+
+- Install the project dependencies (Takes longer time)
+
+```
+pipenv install
+```
+
+- View the dependencies installed
+```
+pipenv graph
+```
+
+
+## B. Run the application
+
+#### Without Elasticsearch Service
 
 - Make the shell script executable by running the following command in terminal
 
@@ -18,7 +58,9 @@
 
 - Visit the URL http://127.0.0.1:8000/fashion to view the web application
 
-## Run Elasticsearch Service
+## C. Run the Application
+
+#### With Elasticsearch Service
 
 - Download ELK stack from the follwing website for windows machine, https://www.elastic.co/downloads/ and setup the Environment Variables
 
@@ -33,7 +75,11 @@
 ```
 ./setup_elastic_data.sh
 ```
-- Start the elasticsearch service
+- Start the elasticsearch service (Run the bat file from elasticsearch bin folder)
+
+```
+elasticsearch.bat
+```
 
 - Stream Data into elastic cluster using logstash
 
@@ -42,12 +88,12 @@ cd ./fashion
 logstash -f logstash.conf
 ```
 
-- Change the input file path value in logstash.conf in fashion folder `(./fashion/logstash.conf)`. This creates data stream pipline and uploads data to the elastic cluster
+- Change the input file path value in logstash.conf in fashion folder `(./fashion/logstash.conf)`. This creates data stream pipeline and uploads data to the elastic cluster
 
 ```
 input {
     file{
-        *path => ["absolutepath required"]*
+        path => ["absolutepath required"]
         start_position => "beginning"
         sincedb_path => "NULL"
     }
@@ -56,7 +102,9 @@ input {
 
 - Visit the URL http://127.0.0.1:8000/fashion to view the web application and use elasticsearch functionality
 
-## Runing model with fashion-dataset from kaggle
+## D. Runing model with fashion-dataset from kaggle
+
+#### Run model in standalone mode
 
 ### Downloading dataset from kaggle
 
