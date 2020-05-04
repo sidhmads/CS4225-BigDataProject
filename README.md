@@ -22,6 +22,32 @@ git clone https://github.com/sidhmads/CS4225-CS5425-BigDataProject.git
 cd CS4225-CS5425-BigDataProject
 ```
 
+- Downloading dataset from kaggle. The dataset can be found here: https://www.kaggle.com/paramaggarwal/fashion-product-images-dataset
+
+- Download the dataset and unzip it inside the CS4225-CS5425-BigDataProject/fashion folder
+
+- Make the shell script executable by running the following command in terminal
+
+```
+  chmod +x ./convert_dataset.sh
+```
+
+- Once it is executable, run the following comand in terminal
+
+```
+./convert_dataset.sh
+```
+
+This shell file does the following:
+
+1. Partition the data:
+   - converts all the images to individual labels according to the `styles.csv` file provided with the kaggle dataset.
+2. Normalize the data
+   - keeps all the labels with at least 200 images
+   - normalizes those labels to have the same number of images.
+3. Convert to grey scale
+   - converts the normalized images to grey scale and store it in the `fashion_spark` directory.
+
 - Start the pipenv shell virtual environment
 
 ```
@@ -105,36 +131,6 @@ input {
 ## D. Runing model with fashion-dataset from kaggle
 
 #### Run model in standalone mode
-
-### Downloading dataset from kaggle
-
-- The dataset can be found here: https://www.kaggle.com/paramaggarwal/fashion-product-images-dataset
-
-- Download the dataset and unzip it inside the fashion folder
-
-### Getting the data ready for the model
-
-- Make the shell script executable by running the following command in terminal
-
-```
-  chmod +x ./convert_dataset.sh
-```
-
-- Once it is executable, run the following comand in terminal
-
-```
-./convert_dataset.sh
-```
-
-This shell file does the following:
-
-1. Partition the data:
-   - converts all the images to individual labels according to the `styles.csv` file provided with the kaggle dataset.
-2. Normalize the data
-   - keeps all the labels with at least 200 images
-   - normalizes those labels to have the same number of images.
-3. Convert to grey scale
-   - converts the normalized images to grey scale and store it in the `fashion_spark` directory.
 
 ### Creating the model
 
