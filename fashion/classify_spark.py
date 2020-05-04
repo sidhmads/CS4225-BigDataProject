@@ -39,8 +39,7 @@ def getDataFrame(img_dir):
 
 if __name__ == "__main__":
 
-  config = SparkConf().setAll([('spark.executor.memory', '8g'), ('spark.executor.cores', '3'), ('spark.cores.max', '3'), ('spark.driver.memory','8g')])
-  sc = SparkContext(conf=config)
+  sc = SparkContext()
   sqlContext = SQLContext(sc)
 
   directory = "./fashion_spark"

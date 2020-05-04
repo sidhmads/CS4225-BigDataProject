@@ -18,7 +18,7 @@
 
 - Visit the URL http://127.0.0.1:8000/fashion to view the web application
 
-## Run ElasticSearch Service
+## Run Elasticsearch Service
 
 - Download ELK stack from the follwing website for windows machine, https://www.elastic.co/downloads/ and setup the Environment Variables
 
@@ -32,6 +32,14 @@
 
 ```
 ./setup_elastic_data.sh
+```
+- Start the elasticsearch service
+
+- Stream Data into elastic cluster using logstash
+
+```
+cd ./fashion
+logstash -f logstash.conf
 ```
 
 - Change the input file path value in logstash.conf in fashion folder `(./fashion/logstash.conf)`. This creates data stream pipline and uploads data to the elastic cluster
