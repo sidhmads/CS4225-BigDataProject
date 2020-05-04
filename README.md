@@ -1,5 +1,7 @@
 # SparkFab! The Fashion Search
 
+#### NOTE: Windows Compatible README
+
 ## Run the application
 
 - Make the shell script executable by running the following command in terminal
@@ -18,7 +20,7 @@
 
 ## Run ElasticSearch Service
 
-- Download ELK stack from the follwing website, https://www.elastic.co/downloads/ and setup Environment Variables
+- Download ELK stack from the follwing website for windows machine, https://www.elastic.co/downloads/ and setup the Environment Variables
 
 - Make the shell script executable by running the following command in terminal
 
@@ -26,10 +28,22 @@
   chmod +x ./setup_elastic_data.sh
 ```
 
-- Once it is executable, run the following comand in terminal
+- Once it is executable, run the following comand in terminal. This will create metadata `elastic-data.csv` in the fashion-dataset folder `(./fashion/fashion-dataset)`
 
 ```
 ./setup_elastic_data.sh
+```
+
+- Change the input file path value in logstash.conf in fashion folder `(./fashion/logstash.conf)`. This creates data stream pipline and uploads data to the elastic cluster
+
+```
+input {
+    file{
+        *path => ["absolutepath required"]*
+        start_position => "beginning"
+        sincedb_path => "NULL"
+    }
+}
 ```
 
 - Visit the URL http://127.0.0.1:8000/fashion to view the web application and use elasticsearch functionality
