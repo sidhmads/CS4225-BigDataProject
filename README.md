@@ -19,7 +19,7 @@ git clone https://github.com/sidhmads/CS4225-CS5425-BigDataProject.git
 - Move to project directory
 
 ```
-cd CS4225-CS5225-BigDataProject
+cd CS4225-CS5425-BigDataProject
 ```
 
 - Start the pipenv shell virtual environment
