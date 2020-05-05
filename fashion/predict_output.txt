@@ -1,1 +1,4 @@
-fashion-upload.jpg = Accessories_Headwear_Caps
+1526.jpg = Accessories_Bags_Backpacks
+1528.jpg = Apparel_Topwear_Sweatshirts
+1529.jpg = Apparel_Topwear_Tshirts
+fashion-upload.jpg = Apparel_Topwear_Sweatshirts
