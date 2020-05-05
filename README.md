@@ -153,7 +153,9 @@ logstash -f logstash.conf
 - Visit the URL http://127.0.0.1:8000/fashion to view the web application
 ### 3.  Runing model with fashion-dataset from kaggle (In standalone mode)
 
-#### Creating the model
+#### Creating the model (It is already provided for you in this repo)
+
+- If you want to create it again, please remove the `CS4225-CS5425-BigDataProject/fashion/lrModel` and `CS4225-CS5425-BigDataProject/fashion/dictionary.pkl`
 
 - Run this command from the `CS4225-CS5425-BigDataProject/fashion/` directory
 
