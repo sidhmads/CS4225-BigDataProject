@@ -69,23 +69,7 @@ pipenv graph
 ```
 
 ## B. Chose the method you want to run this application
-### 1. Running the application (Without Elasticsearch Service)
-
-- Make the shell script executable by running the following command in terminal
-
-```
-  chmod +x ./run_application.sh
-```
-
-- Once it is executable, run the following comand in terminal
-
-```
-./run_application.sh
-```
-
-- Visit the URL http://127.0.0.1:8000/fashion to view the web application
-
-### 2. Running the application (With Elasticsearch Service)
+### 1. Running the application (With Elasticsearch Service)
 
 - Download ELK stack from the follwing website for windows machine, https://www.elastic.co/downloads/ and setup the Environment Variables
 
@@ -100,20 +84,17 @@ pipenv graph
 ```
 ./setup_elastic_data.sh
 ```
-- Start the elasticsearch service (Run the bat file from elasticsearch bin folder)
+- Start the elasticsearch service
+  - If you have the .bat file (Run the bat file from elasticsearch bin folder)
+  ```
+    elasticsearch.bat
+  ```
+  - If you have elasticsearch installed as a service just run
+  ```
+    elasticsearch
+  ```
 
-```
-elasticsearch.bat
-```
-
-- Stream Data into elastic cluster using logstash
-
-```
-cd ./fashion
-logstash -f logstash.conf
-```
-
-- Change the input file path value in logstash.conf in fashion folder `(./fashion/logstash.conf)`. This creates data stream pipeline and uploads data to the elastic cluster
+- Change the input file path value in logstash.conf in fashion folder `(./fashion/logstash.conf)` to point to the `elastic-data.csv` that was created previously. This creates data stream pipeline and uploads data to the elastic cluster
 
 ```
 input {
@@ -124,9 +105,52 @@ input {
     }
 }
 ```
+- Stream Data into elastic cluster using logstash (Open another terminal)
 
-- Visit the URL http://127.0.0.1:8000/fashion to view the web application and use elasticsearch functionality
+```
+cd ./fashion
+logstash -f logstash.conf
+```
+- If yours is a linux machine, you would need to change the following:
+  - In `views.py`
+    - In `runModel` function
+      - Change the `.\predict.py` in `subprocess.Popen` method 
+        - To `./predict.py`
+- Make the shell script executable by running the following command in terminal
 
+```
+  chmod +x ./run_application.sh
+```
+
+- Once it is executable, run the following comand in terminal
+
+```
+./run_application.sh
+```
+
+- Visit the URL http://127.0.0.1:8000/fashion to view the web application
+
+### 2. Running the application (Without Elasticsearch Service)
+
+- If yours is a linux machine, you would need to change the following:
+  - In `views.py`
+    - In `runModel` function
+      - Change the `.\predict.py` in `subprocess.Popen` method 
+        - To `./predict.py`
+
+- Make the shell script executable by running the following command in terminal
+
+```
+  chmod +x ./run_application.sh
+```
+
+- Once it is executable, run the following comand in terminal
+
+```
+./run_application.sh
+```
+
+- Visit the URL http://127.0.0.1:8000/fashion to view the web application
 ### 3.  Runing model with fashion-dataset from kaggle (In standalone mode)
 
 #### Creating the model
