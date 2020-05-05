@@ -155,7 +155,7 @@ logstash -f logstash.conf
 
 #### Creating the model
 
-- Run this command in the terminal
+- Run this command from the `CS4225-CS5425-BigDataProject/fashion/` directory
 
 ```
 spark-submit --packages databricks:spark-deep-learning:1.5.0-spark2.4-s_2.11 --executor-cores 5 --num-executors 24 --driver-memory 32g --executor-memory 32g ./classify_spark.py
@@ -163,7 +163,7 @@ spark-submit --packages databricks:spark-deep-learning:1.5.0-spark2.4-s_2.11 --e
 
 - This will create `lrModel` directory that contains the trained model and a `dictionary.pkl` file that contains the labels that is used to evaluate the model
 
-### Predicting the results
+#### Predicting the results
 
 - Create a folder called `media` in the `CS4225-CS5425-BigDataProject/fashion/` directory
 - Place the images to be predicted in `media` folder
