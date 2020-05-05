@@ -1,4 +1,5 @@
-fashion-dataset/
-dataset_images/
-dataset_styles/
-NULL
+fashion/fashion-dataset/
+fashion/dataset_images/
+fashion/dataset_styles/
+fashion/NULL
+fashion/tags
