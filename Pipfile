@@ -24,7 +24,7 @@ matplotlib = "*"
 tensorflow = "==1.15.0"
 requests = "*"
 joblib = "*"
-django = "==2.2.11"
+django = "==2.2.27"
 
 [requires]
 python_version = "3.7"
